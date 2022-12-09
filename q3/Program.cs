@@ -1,5 +1,6 @@
-﻿using MyMethods;
-MyMethod my = new MyMethod();
+﻿using static MyMethods.MyMethod;
+using MyMethods;
+MyGenerate gen = new MyGenerate();
 
 // Задача 44: Не используя рекурсию, выведите первые
 // N чисел Фибоначчи. Первые два числа Фибоначчи: 0 и
@@ -7,9 +8,9 @@ MyMethod my = new MyMethod();
 // Если N = 5 -> 0 1 1 2 3 Если N = 3 -> 0 1 1
 // Если N = 7 -> 0 1 1 2 3 5 8
 
-uint usersNumber = my.UintInput("число предела");
+uint usersNumber = UintInput("число предела");
 uint[] fib = Fibonacci(usersNumber);
-my.Print(fib);
+Print(fib);
 
 
 uint[] Fibonacci (uint userNum) {

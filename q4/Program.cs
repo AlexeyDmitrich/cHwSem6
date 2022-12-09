@@ -1,10 +1,11 @@
-﻿using MyMethods.MyMethod;
-MyMethod my = new MyMethod();
+﻿using static MyMethods.MyMethod;
+using MyMethods;
+MyGenerate gen = new MyGenerate();
 
 // Задача 45: Напишите программу, которая будет создавать копию заданного массива с помощью
 // поэлементного копирования.
 
-double[] userArray = my.ArrayGenD();
+double[] userArray = gen.ArrayGenD();
 
 
 double[] ArrayCopy (double[] usersArray){

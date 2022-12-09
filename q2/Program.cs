@@ -1,5 +1,6 @@
-﻿using MyMethods;
-MyMethod my = new MyMethod();
+﻿using static MyMethods.MyMethod;
+using MyMethods;
+MyGenerate gen = new MyGenerate();
 
 /*
 Задача 42: Напишите программу, которая будет преобразовывать десятичное число в двоичное. 45 -> 101101
@@ -7,9 +8,9 @@ MyMethod my = new MyMethod();
 2 -> 10
 */
 
-int number = my.IntInput("любое целое число");
+int number = IntInput("любое целое число");
 int[] binNumber = TenToBin(number);
-my.Print(binNumber);
+Print(binNumber);
 
 
 int[] TenToBin (int num){

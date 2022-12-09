@@ -1,5 +1,6 @@
-﻿using MyMethods;
-MyMethod my = new MyMethod();
+﻿using static MyMethods.MyMethod;
+using MyMethods;
+MyGenerate gen = new MyGenerate();
 
 /*
 Задача 40: Напишите программу, которая принимает на
@@ -8,13 +9,14 @@ MyMethod my = new MyMethod();
 Теорема о неравенстве треугольника: каждая сторона треугольника меньше суммы двух других сторон.
 */
 
-int a = my.IntInput("длина стороны А");
-int b = my.IntInput("длина стороны B");
-int c = my.IntInput("длина стороны C");
+int a = 3; // IntInput("длина стороны А");
+int b = 4; // IntInput("длина стороны B");
+int c = 5; // IntInput("длина стороны C");
 
 bool res = IsTriangle(a, b, c);
-my.Print(res);
+Print(res);
 
 bool IsTriangle (int a, int b, int c){
     return (a<(b+c) && b<(a+c) && c<(a+b));
 }
+
