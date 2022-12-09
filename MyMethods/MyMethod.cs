@@ -39,6 +39,41 @@ public static class MyMethod {
         }
     }
 
+    // метод последовательного ввода ряда значений
+    public static int[] InputArrInt (){
+        Print("Введите целые числовые значения");
+        Print("В качестве разделителя используйте пробел");
+        string[] userInput = (Console.ReadLine()).Split(new char[] {' '});
+        int[] input = new int[userInput.Length];
+        for (int i = 0; i<input.Length; i++){
+            bool isInt = int.TryParse(userInput[i], out int num);
+            if (isInt) {
+                input[i] = num;
+            } else {
+                Print("Вы ввели недопустимые значения. \n проверьте правильность: \n * целые числа \n * разделены пробелом \n * другие символы отсутствуют");
+                return InputArrInt();
+            }
+        }
+        return input;
+    } 
+    public static double[] InputArrDouble (){
+        Print("Введите числовые значения");
+        Print("В качестве разделителя используйте пробел");
+        string[] userInput = (Console.ReadLine()).Split(new char[] {' '});
+        double[] input = new double[userInput.Length];
+        for (int i = 0; i<input.Length; i++){
+            bool isInt = double.TryParse(userInput[i], out double num);
+            if (isInt) {
+                input[i] = num;
+            } else {
+                Print("Вы ввели недопустимые значения. \n проверьте правильность: \n * вещественные числа \n * разделены пробелом \n * дробная часть отделена запятой \n * другие символы отсутствуют");
+                return InputArrDouble();
+            }
+        }
+        return input;
+    } 
+
+
 
     /*========= Методы вывода в консоль ============*/
 
