@@ -18,41 +18,44 @@ double b1 = DoubleInput("b1");
 double k2 = DoubleInput("k2");
 double b2 = DoubleInput("b2");
 
-//InterPoint();
-
-// точка входа
-//void InterPoint (){
-    try {
+try
+{
     double xCoordinate = FindVerticalPositionX(k1, b1, k2, b2);
-    double yCoordinate = FindVerticalPositionX(k1, b1, k2, b2);
+    double yCoordinate = FindHorisontalPositionY(k1, b1, k2, b2);
     Print($"Точка пересечения прямых находится на коордитнатах: ({xCoordinate}; {yCoordinate})");
-    } catch (Exception e) {
-        Print($"({e.Message})");
-        return;
-    }
-//}
+}
+catch (Exception e)
+{
+    Print($"({e.Message})");
+    return;
+}
 
-
-
-bool LinearFunctionIntersection (double k1, double b1, double k2, double b2){
+bool LinearFunctionIntersection(double k1, double b1, double k2, double b2)
+{
     bool haveIntersection = true;
-    if (k1 == k2){
-        if (b1 == b2) {
-            Print ("прямые совпадают");
-        } else {
-            Print ("прямые параллельны");
+    if (k1 == k2)
+    {
+        if (b1 == b2)
+        {
+            Print("прямые совпадают");
+        }
+        else
+        {
+            Print("прямые параллельны");
         }
         haveIntersection = false;
     }
     return haveIntersection;
 }
 
-double FindVerticalPositionX (double k1, double b1, double k2, double b2){
-    if (LinearFunctionIntersection(k1, b1, k2, b2)) return (b2-b1)/(k1-k2);
+double FindVerticalPositionX(double k1, double b1, double k2, double b2)
+{
+    if (LinearFunctionIntersection(k1, b1, k2, b2)) return (b2 - b1) / (k1 - k2);
     else throw new Exception("Отсутствует единая точка пересечения");
 }
 
-double FindHorisontalPositionY (double k1, double b1, double k2, double b2){
-    if (LinearFunctionIntersection(k1, b1, k2, b2)) return k1*(b2-b1)/(k1-k2)+b1;
+double FindHorisontalPositionY(double k1, double b1, double k2, double b2)
+{
+    if (LinearFunctionIntersection(k1, b1, k2, b2)) return k1 * (b2 - b1) / (k1 - k2) + b1;
     else throw new Exception("Отсутствует единая точка пересечения");
 }

@@ -6,7 +6,7 @@ MyGenerate gen = new MyGenerate();
 // поэлементного копирования.
 
 double[] userArray = gen.ArrayGenD();
-
+ArrayCopy(userArray);
 
 double[] ArrayCopy (double[] usersArray){
     double[] arrayCopied = new double[usersArray.Length];

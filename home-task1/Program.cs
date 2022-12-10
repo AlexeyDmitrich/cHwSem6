@@ -12,11 +12,14 @@ Print(usersArray);
 int res = PositiveNumsValue(usersArray);
 Print($"Введено {res} чисел больше 0");
 
-int PositiveNumsValue (int[] array){
+int PositiveNumsValue(int[] array)
+{
     int counter = 0;
-    for (int i = 0; i < array.Length; i++){
-        if (array[i]>0) {
-            counter ++;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] > 0)
+        {
+            counter++;
         }
     }
     return counter;
